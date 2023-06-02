@@ -124,8 +124,7 @@
     <Body>
       <!-- ...existing code... -->
 
-      <!-- Replaced code -->
-      {#each finalStarters as starter}
+      {#each finalStarters as starter (starter.poss)}
         <RosterRow player={starter} />
       {/each}
       <Row class="interactive" on:click={toggleSelected}>
@@ -136,17 +135,15 @@
   <div class="rosterBench" style="max-height: {selected}">
     <DataTable class="teamInner" style="width: 380px">
       <Body class="bench">
-        <!-- Replaced code -->
-        {#each finalBench as bench}
+        {#each finalBench as bench (bench.poss)}
           <RosterRow player={bench} />
         {/each}
 
-        <!-- Replaced code -->
         {#if finalIR}
           <Row>
             <Cell colspan=4><h5><Icon class="material-icons icon">healing</Icon> Injured Reserve</h5></Cell>
           </Row>
-          {#each finalIR as ir}
+          {#each finalIR as ir (ir.poss)}
             <RosterRow player={ir} />
           {/each}
         {/if}
