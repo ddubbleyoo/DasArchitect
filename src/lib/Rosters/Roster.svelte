@@ -71,39 +71,41 @@
 				<Cell colspan=1 class="r_{division}"><h5>Salary</h5></Cell>
 				<Cell colspan=1 class="r_{division}"><h5>Designation</h5></Cell>
 			</Row>
-      
-      <Body>
-        <!-- Starters -->
-        {#each finalStarters as starter}
-          <RosterRow player={starter} />
-        {/each}
-        <Row class="interactive" on:click={toggleSelected}>
-          <Cell colspan=9 class="{division}"><h5><Icon class="material-icons icon">king_bed</Icon> Bench <span class="italic">({status})</span></h5></Cell>
-        </Row>
-      </Body>
-    </DataTable>
+		</Head>
     
-    <div class="rosterBench" style="max-height: {selected}">
-      <DataTable class="teamInner" style="width: 380px">
-        <Body class="bench">
-          <!-- Bench -->
-          {#each finalBench as bench}
-            <RosterRow player={bench} />
-          {/each}
-          
-          <!-- IR -->
-          {#if finalIR}
-            <Row>
-              <Cell colspan=9><h5><Icon class="material-icons icon">healing</Icon> Injured Reserve</h5></Cell>
-            </Row>
-            {#each finalIR as ir}
-              <RosterRow player={ir} />
-            {/each}
-          {/if}
-          <Row class="interactive" on:click={toggleSelected}>
-            <Cell colspan=9 class="{division}"><h5><Icon class="material-icons icon">close_fullscreen</Icon> Close Bench</h5></Cell>
-          </Row>
-        </Body>
-      </DataTable>
-    </div>
-  </div>
+		<Body>
+			<!-- Starters -->
+			{#each finalStarters as starter}
+				<RosterRow player={starter} />
+				{/each}
+				<Row class="interactive" on:click={toggleSelected}>
+					<Cell colspan=9 class="{division}"><h5><Icon class="material-icons icon">king_bed</Icon> Bench <span class="italic">({status})</span></h5></Cell>
+				</Row>
+			</Body>
+		</DataTable>
+  
+		<div class="rosterBench" style="max-height: {selected}">
+			<DataTable class="teamInner" style="width: 380px">
+				<Body class="bench">
+					<!-- Bench -->
+					{#each finalBench as bench}
+						<RosterRow player={bench} />
+					{/each}
+
+					<!-- IR -->
+					{#if finalIR}
+						<Row>
+							<Cell colspan=9><h5><Icon class="material-icons icon">healing</Icon> Injured Reserve</h5></Cell>
+						</Row>
+						{#each finalIR as ir}
+							<RosterRow player={ir} />
+						{/each}
+					{/if}
+					<Row class="interactive" on:click={toggleSelected}>
+						<Cell colspan=9 class="{division}"><h5><Icon class="material-icons icon">close_fullscreen</Icon> Close Bench</h5></Cell>
+					</Row>
+				</Body>
+			</DataTable>
+		</div>
+	</div>
+</div>
