@@ -291,7 +291,7 @@
           {#each starter.name.split(' ') as nickname}
             <Cell>{nickname}</Cell>
           {/each}
-        {else}
+        {:else}
           <Cell></Cell>
           <Cell></Cell>
           <Cell></Cell>
@@ -317,7 +317,7 @@
             {#each bench.name.split(' ') as nickname}
               <Cell>{nickname}</Cell>
             {/each}
-          {else}
+          {:else}
             <Cell></Cell>
             <Cell></Cell>
             <Cell></Cell>
@@ -335,4 +335,19 @@
             <Cell>{ir.name}</Cell>
             <Cell>{ir.poss}</Cell>
             <Cell>{ir.team}</Cell>
-            <Cell>{ir.slot}</Cell
+            <Cell>{ir.slot}</Cell>
+            {#if ir.name.includes(' ')}
+              {#each ir.name.split(' ') as nickname}
+                <Cell>{nickname}</Cell>
+              {/each}
+            {:else}
+              <Cell></Cell>
+              <Cell></Cell>
+              <Cell></Cell>
+            {/if}
+          </Row>
+        {/each}
+      {/if}
+    </Body>
+  </DataTable>
+</div>
