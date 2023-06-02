@@ -78,21 +78,21 @@
         </Body>
       </DataTable>
     </div>
-  </div>
+  </DataTable>
+</div>
 
-  <script>
-    // ...existing code...
+<script>
+  // ...existing code...
 
-    // Populate the new columns with delimited data from Player Nickname
-    finalStarters = finalStarters.map(starter => {
-      const playerNicknameParts = starter.playerNickname.split(' ');
-      return {
-        ...starter,
-        yearSigned: playerNicknameParts[0] || '',
-        contractLength: playerNicknameParts[1] || '',
-        salary: playerNicknameParts[2] || '',
-        designation: playerNicknameParts[3] || ''
-      };
-    });
-    </div>
-  </script>
+  // Populate the new columns with delimited data from Player Nickname
+  finalStarters = finalStarters.map(starter => {
+    const playerNicknameParts = starter.playerNickname.split(' ');
+    return {
+      ...starter,
+      yearSigned: playerNicknameParts[0] || '',
+      contractLength: playerNicknameParts[1] || '',
+      salary: playerNicknameParts[2] || '',
+      designation: playerNicknameParts[3] || ''
+    };
+  });
+</script>
