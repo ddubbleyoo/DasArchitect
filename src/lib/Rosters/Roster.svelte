@@ -94,4 +94,5 @@
         designation: playerNicknameParts[3] || ''
       };
     });
+    </div>
   </script>
