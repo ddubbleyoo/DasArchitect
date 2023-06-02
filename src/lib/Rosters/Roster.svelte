@@ -42,7 +42,8 @@
 
 <div class="team">
 	<DataTable class="teamInner" table$aria-label="Team Name" style="width: {innerWidth * 0.95 > 380 ? 380 : innerWidth * 0.95}px;">
-		<Head> <!-- Team name and additional headers -->
+		<Head>
+			<!-- Existing row with "Team Name" -->
 			<Row>
 				<Cell colspan=1 class="r_{division} clickable">
 					<h3 on:click={() => gotoManager({leagueTeamManagers, rosterID: roster.roster_id})}>
@@ -56,6 +57,11 @@
 						{/each}
 					</div>
 				</Cell>
+			</Row>
+      
+			<!-- New row with additional headers -->
+			<Row>
+				<Cell colspan=1 class="r_{division}"></Cell>
 				<Cell colspan=1 class="r_{division}"><h5>POS</h5></Cell>
 				<Cell colspan=1 class="r_{division}"><h5>FACE</h5></Cell>
 				<Cell colspan=1 class="r_{division}"><h5>TEAM</h5></Cell>
@@ -66,6 +72,7 @@
 				<Cell colspan=1 class="r_{division}"><h5>Designation</h5></Cell>
 			</Row>
 		</Head>
+    
 		<Body>
 			<!-- Starters -->
 			{#each finalStarters as starter}
@@ -76,6 +83,7 @@
 			</Row>
 		</Body>
 	</DataTable>
+  
 	<div class="rosterBench" style="max-height: {selected}">
 		<DataTable class="teamInner" style="width: 380px">
 			<Body class="bench">
