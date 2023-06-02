@@ -258,7 +258,7 @@
 </style>
 
 <div class="team">
-	<DataTable class="teamInner" table$aria-label="Team Name" style="width: {innerWidth * 0.95 > 380 ? 380 : innerWidth * 0.95}px;">
+<DataTable class="teamInner" table$aria-label="Team Name" style="width: {innerWidth * 0.95 > 380 ? 380 : innerWidth * 0.95}px;">
   <Head> <!-- Team name  -->
     <Row>
       <Cell colspan=4 class="r_{division} clickable">
@@ -303,8 +303,8 @@
     </Row>
   </Body>
 </DataTable>
-<div class="rosterBench" style="max-height: {selected}">
-  <DataTable class="teamInner" style="width: 380px">
+<div class="rosterBench" style="max-height: {selected}px;">
+  <DataTable class="teamInner" style="width: 380px;">
     <Body class="bench">
       <!-- Bench -->
       {#each finalBench as bench}
